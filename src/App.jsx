@@ -1,3 +1,5 @@
+import article from './data/article.json';
+import stats from './data/stats.json';
 import BlogCard from './components/BlogCard/BlogCard';
 import Container from './components/Container/Container';
 import CryptoHistory from './components/CryptoHistory/CryptoHistory';
@@ -11,10 +13,18 @@ export const App = () => {
     <Section>
       <Container>
         <Heading title="Task 1 Blog Card" bottom />
-        <BlogCard />
+        <BlogCard
+          poster={article.poster}
+          tag={article.tag}
+          title={article.title}
+          description={article.description}
+          userName={article.name}
+          avatar={article.avatar}
+          postedAt={article.postedAt}
+        />
 
         <Heading title="Task 2 Statistics" top bottom />
-        <Statistics title="Main Statistics" />
+        <Statistics title="Main Statistics" stats={stats} />
 
         <Heading title="Task 3 Forbes list" top bottom />
         <ForbesList />
